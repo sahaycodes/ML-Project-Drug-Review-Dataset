@@ -1725,13 +1725,13 @@ import plotly.express as px
 plt.style.context('grayscale')
 %matplotlib inline
 
-
+#create a bar graph 
 msno.bar(train_df, figsize=(16,7), color='blue')
 plt.xlabel("columns")
 plt.show()
 
 corr=train_df.corr()
-#Checking for +ve and -ve Correlation
+#Checking for +ve and -ve Correlation using Heatmap 
 plt.figure(figsize=(16,10))
 sns.heatmap(corr, cmap='copper',annot=True)
 plt.show()
@@ -1749,6 +1749,9 @@ fig.show()
 sns.catplot(data=train_df,kind="bar",x="rating",y="usefulCount",palette="cool")
 plt.show()
 
+
+#creation of pie-charts - top10 condition counts 
+#top10 medicine/drug counts 
 condition_counts=train_df['condition'].value_counts()
 top10_conditions=condition_counts[:10]
 colors=['purple','lightblue','pink','lightgreen']
@@ -1781,8 +1784,4 @@ plt.xticks(rotation=45,ha='right')
 plt.tight_layout()
 plt.show()
 
-#ensemble learning techniques-voting classifier
-from sklearn.ensemble import VotingClassifier
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.svm import SVC
+
