@@ -1782,4 +1782,7 @@ plt.tight_layout()
 plt.show()
 
 #ensemble learning techniques-voting classifier
-
+from sklearn.ensemble import VotingClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.svm import SVC
